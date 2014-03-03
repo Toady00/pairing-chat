@@ -1,0 +1,25 @@
+{
+  "name": "pairing-chat",
+  "main": "./lib/pairing-chat",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A short description of your package",
+  "activationEvents": [
+    "pairing-chat:connect",
+    "pairing:chat:disconnect",
+    "pairing-chat:toggle",
+    "pairing-chat:sendmessage",
+    "pairing-chat:serverstart",
+    "pairing-chat:serverstop"
+  ],
+  "repository": "https://github.com/atom/pairing-chat",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "socket.io": ">=0.9.16",
+    "socket.io-client": ">=0.9.16",
+    "emissary": ">=1.0.0"
+  }
+}
