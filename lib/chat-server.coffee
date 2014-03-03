@@ -8,7 +8,7 @@ class ChatServer
     @port = atom.config.get('pairing-chat.port') or 3001
 
   start: ->
-    @io = require('socket.io').listen(3001)
+    @io = require('socket.io').listen(@port)
 
     @io.sockets.on 'connection', (socket) ->
       socket.emit 'message', greeting
