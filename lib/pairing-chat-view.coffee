@@ -8,9 +8,6 @@ class PairingChatView extends View
   @content: ->
     @div class: 'pairing-chat tool-panel panel-bottom padded', =>
       @div outlet: 'history', class: 'chat-history block', =>
-        @div class: 'chat-history-message block', =>
-          @div 'Username: ', class: 'chat-history-user inline-block'
-          @div 'Some content', class: 'chat-history-content inline-block'
       @div class: 'chat-form block', =>
         @input type: 'text', class: 'inline-block chat-form-text', outlet: 'currentMessage'
         @button class: 'btn btn-primary inline-block', click: 'send', 'send'
