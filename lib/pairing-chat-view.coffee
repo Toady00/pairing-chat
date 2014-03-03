@@ -11,6 +11,7 @@ class PairingChatView extends View
       @div class: 'chat-form block', =>
         @input type: 'text', class: 'inline-block chat-form-text', outlet: 'currentMessage'
         @button class: 'btn btn-primary inline-block', click: 'send', 'send'
+        @button class: 'btn btn-warning', click: 'clearCurrentMessage', 'clear'
 
   initialize: (serializeState) ->
     atom.workspaceView.command "pairing-chat:toggle", => @toggle()
@@ -48,3 +49,4 @@ class PairingChatView extends View
 
   clearCurrentMessage: ->
     @currentMessage.val('')
+    @currentMessage.focus()
