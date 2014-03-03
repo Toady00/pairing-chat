@@ -3,7 +3,7 @@
   "main": "./lib/pairing-chat",
   "version": "0.1.0",
   "private": true,
-  "description": "A short description of your package",
+  "description": "Chat in your Editor",
   "activationEvents": [
     "pairing-chat:connect",
     "pairing:chat:disconnect",
