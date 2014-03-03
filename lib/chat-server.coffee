@@ -10,10 +10,10 @@ class ChatServer
   start: ->
     @io = require('socket.io').listen(@port)
 
-    @io.sockets.on 'connection', (socket) ->
+    @io.sockets.on 'connection', (socket) =>
       socket.emit 'message', greeting
-      socket.on 'client:message', (data) ->
-        socket.emit 'message', data
+      socket.on 'client:message', (data) =>
+        @io.sockets.emit 'message', data
 
   stop: ->
     @io.server.close()
