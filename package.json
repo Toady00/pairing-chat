@@ -12,7 +12,7 @@
     "pairing-chat:serverstart",
     "pairing-chat:serverstop"
   ],
-  "repository": "https://github.com/atom/pairing-chat",
+  "repository": "https://github.com/Toady00/pairing-chat",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
