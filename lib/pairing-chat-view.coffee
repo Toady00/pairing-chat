@@ -1,5 +1,6 @@
 {View} = require 'atom'
 Emitter = require('emissary').Emitter
+thisUser = atom.config.get('pairing-chat.user')
 
 module.exports =
 class PairingChatView extends View
@@ -31,9 +32,11 @@ class PairingChatView extends View
       console.log "PairingChatView was toggled on!"
       atom.workspaceView.appendToBottom(this)
 
+  # TODO: Consider making messages a partial view
   newMessage: (user, content) ->
+    userClass = @classFor(user)
     @history.append View.render ->
-      @div class: 'chat-history-message block', =>
+      @div class: "chat-history-message block #{userClass}", =>
         @div "#{user}: ", class: 'chat-history-sender inline-block'
         @div content, class: 'chat-history-message inline-block'
 
@@ -50,3 +53,11 @@ class PairingChatView extends View
   clearCurrentMessage: ->
     @currentMessage.val('')
     @currentMessage.focus()
+
+  classFor: (user) ->
+    if user is thisUser
+      'text-info'
+    else if user is 'server'
+      'text-highlight'
+    else
+      ''
