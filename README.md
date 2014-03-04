@@ -81,7 +81,6 @@ coffee app.coffee
 
 ## TODO:
 
-- Colorize history
 - Support for being mentioned
 - TESTS!!!!
 - Support for Authentication
