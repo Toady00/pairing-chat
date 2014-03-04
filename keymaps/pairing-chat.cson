@@ -11,3 +11,7 @@
   'ctrl-alt-o': 'pairing-chat:toggle'
 '.pairing-chat':
   'enter': 'pairing-chat:sendmessage'
+  'backspace': 'native!'
+  'delete': 'native!'
+  'left': 'native!'
+  'right': 'native!'
