@@ -31,6 +31,7 @@ class PairingChatView extends View
     else
       console.log "PairingChatView was toggled on!"
       atom.workspaceView.appendToBottom(this)
+      @focus()
 
   # TODO: Consider making messages a partial view
   newMessage: (user, content) ->
@@ -45,14 +46,14 @@ class PairingChatView extends View
     if content?.length
       @emit 'send', content
       @clearCurrentMessage()
-    @currentMessage.focus()
+    @focus()
 
   getCurrentMessage: ->
     @currentMessage.val()
 
   clearCurrentMessage: ->
     @currentMessage.val('')
-    @currentMessage.focus()
+    @focus()
 
   classFor: (user) ->
     if user is thisUser
@@ -61,3 +62,6 @@ class PairingChatView extends View
       'text-highlight'
     else
       ''
+
+  focus: ->
+    @currentMessage.focus()
